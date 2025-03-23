@@ -7,7 +7,6 @@
     <!-- Linking Font Awesome for icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="import" href="about.html">
     </head>
     <body> 
         <!-- Header / Navbar -->
@@ -19,13 +18,13 @@
                 <ul class="nav-menu">
                     <button id="menu-close-button" class="fas fa-times"></button>
                     <li class="nav-items">
-                        <a href="#" class="nav-link">НАЧАЛО</a>
+                        <a href="#home" class="nav-link">НАЧАЛО</a>
                     </li>
                     <li class="nav-items">
-                        <a href="#" class="nav-link">ЗА НАС</a>
+                        <a href="#about" class="nav-link">ЗА НАС</a>
                     </li>
                     <li class="nav-items dropdown">
-                        <a href="#" class="nav-link">ИМОТИ</a>
+                        <a href="#featured" class="nav-link">ИМОТИ</a>
                         <ul class="dropdown-menu">
                             <li><a href="#" class="dropdown-item">КЪЩИ</a></li>
                             <li><a href="#" class="dropdown-item">БУНГАЛА</a></li>
@@ -35,26 +34,26 @@
                         <a href="#" class="nav-link">ПОЛЕЗНО</a>
                         <ul class="dropdown-menu">
                             <li><a href="#" class="dropdown-item">Съвети за купувачи</a></li>
-                            <li><a href="#" class="dropdown-item">Ценови диапазон</a></li>
+                            <li><a href="#filter" class="dropdown-item">Ценови диапазон</a></li>
                         </ul>
                     </li>
                     <li class="nav-items">
-                        <a href="#" class="nav-link">РЕЙТИНГ</a>
+                        <a href="#review" class="nav-link">РЕЙТИНГ</a>
                     </li>
                     <li class="nav-items">
-                        <a href="#" class="nav-link">КОНТАКТ</a>
+                        <a href="#contact" class="nav-link">КОНТАКТ</a>
                     </li>
                 </ul>
                 
                 <div class="nav-actions">
-                    <!-- Post Property Button -->
+                    <!-- Добави обява -->
                     <div class="post-property">
                         <button class="post-property-btn">Добави обява <i class="fas fa-paper-plane"></i></button>
                         <!-- Alt Menüler -->
                         <div class="dropdown-menu property-dropdown">
-                            <a href="#" class="saved-link"><i class="fas fa-heart"></i> Вход </a>
+                            <a href="#" class="saved-link"> Вход </a>
                             <div class="account-dropdown">
-                                <a href="#" class="account-link">Регистрация <i class="fas fa-chevron-down"></i></a>
+                                <a href="template/register.html" class="account-link">Регистрация </a>
                             </div>
                         </div>
                     </div>
@@ -67,10 +66,10 @@
 
         <main>
             <!-- Hero section -->
-            <section class="hero-section">
-                <div class="section-content">
-                    <div class="hero-details">
-                        <h2 class="title"> Houses </h2>
+            <section class="hero-section"  id="home">
+                <div class="section-content" >
+                    <div class="hero-details" >
+                        <h2 class="title" > Houses </h2>
                         <h3 class="subtitle">Вие мечтайте, ние ще сглобим желания от вас дом!</h3>
                         <p class="description">Евтини сглобяеми къщи</p>
                         <div class="buttons">
@@ -78,12 +77,12 @@
                             <a href="#" class="button contact-us">Свържете се с нас</a>
                         </div>
                         </div>
-                        <div class="hero-image-wrapper">
+                        <div class="hero-image-wrapper" >
                             <img src="img/house.jpg" alt="Hero" class="hero-image">
             </section>
 
             <!--About section-->
-            <section class="about-section">
+            <section class="about-section" id="about">
                 <div class="section-content">
                     <div class="about-image-wrapper">
                         <img src="img/home.jpg" alt="About" class="about-image">
@@ -101,8 +100,8 @@
              </section>
 
             <!--ценови диапазон-->
-            <div class="price-filter">
-                <label for="min-price">Минимална цена:</label>
+            <div class="price-filter" id="filter">
+                <label for="min-price" >Минимална цена:</label>
                 <input type="number" id="min-price" name="min-price" placeholder="от">
             
                 <label for="max-price">Максимална цена:</label>
@@ -343,84 +342,83 @@
 </section>
 
           <!-- Рейтинг -->
-<section class="review" id="review">
-    <h1 class="heading">Рейтинг<span> на продавача</span></h1>
-    <div class="box-container">
-
-        <!--1-->
-        <div class="box">
-            <div class="stars" data-id="1">
-                <span data-value="1">★</span>
-                <span data-value="2">★</span>
-                <span data-value="3">★</span>
-                <span data-value="4">★</span>
-                <span data-value="5">★</span>
-                <span data-value="6">★</span>
-                <span data-value="7">★</span>
-                <span data-value="8">★</span>
-                <span data-value="9">★</span>
-                <span data-value="10">★</span>
-            </div>
-            <p>от 10 до 7.5 Повечето купувачи са много доволни от този продавач</p>
-            <div class="user">
-                <img src="img/salesman.jpg" alt="">
-                <div class="user-info">
-                    <h3>Алена Шарапова</h3>
-                    <span>Щастлив продавач</span>
+          <section class="review" id="review">
+            <h1 class="heading">Рейтинг<span> на продавача</span></h1>
+            <div class="box-container">
+        
+                <!--1-->
+                <div class="box">
+                    <div class="stars" data-id="1">
+                        <span data-value="1">★</span>
+                        <span data-value="2">★</span>
+                        <span data-value="3">★</span>
+                        <span data-value="4">★</span>
+                        <span data-value="5">★</span>
+                        <span data-value="6">★</span>
+                        <span data-value="7">★</span>
+                        <span data-value="8">★</span>
+                        <span data-value="9">★</span>
+                        <span data-value="10">★</span>
+                    </div>
+                    <p>от 10 до 7.5 Повечето купувачи са много доволни от този продавач</p>
+                    <div class="user">
+                        <img src="img/salesman.jpg" alt="">
+                        <div class="user-info">
+                            <h3>Алена Шарапова</h3>
+                            <span>Щастлив продавач</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!--2-->
-        <div class="box">
-            <div class="stars" data-id="2">
-                <span data-value="1">★</span>
-                <span data-value="2">★</span>
-                <span data-value="3">★</span>
-                <span data-value="4">★</span>
-                <span data-value="5">★</span>
-                <span data-value="6">★</span>
-                <span data-value="7">★</span>
-                <span data-value="8">★</span>
-                <span data-value="9">★</span>
-                <span data-value="10">★</span>
-            </div>
-            <p>7.5 до 5.0 Повечето купувачи са доволни от този продавач</p>
-            <div class="user">
-                <img src="img/salesman1.jpg" alt="">
-                <div class="user-info">
-                    <h3>Красимир Лазаров</h3>
-                    <span>Щастлив продавач</span>
+        
+                <!--2-->
+                <div class="box">
+                    <div class="stars" data-id="2">
+                        <span data-value="1">★</span>
+                        <span data-value="2">★</span>
+                        <span data-value="3">★</span>
+                        <span data-value="4">★</span>
+                        <span data-value="5">★</span>
+                        <span data-value="6">★</span>
+                        <span data-value="7">★</span>
+                        <span data-value="8">★</span>
+                        <span data-value="9">★</span>
+                        <span data-value="10">★</span>
+                    </div>
+                    <p>7.5 до 5.0 Повечето купувачи са доволни от този продавач</p>
+                    <div class="user">
+                        <img src="img/salesman1.jpg" alt="">
+                        <div class="user-info">
+                            <h3>Красимир Лазаров</h3>
+                            <span>Щастлив продавач</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!--3-->
-        <div class="box">
-            <div class="stars" data-id="1">
-                <span data-value="1">★</span>
-                <span data-value="2">★</span>
-                <span data-value="3">★</span>
-                <span data-value="4">★</span>
-                <span data-value="5">★</span>
-                <span data-value="6">★</span>
-                <span data-value="7">★</span>
-                <span data-value="8">★</span>
-                <span data-value="9">★</span>
-                <span data-value="10">★</span>
-            </div>
-            <p>5.0 до 2.5 Повечето купувачи са доволни от този продавач</p>
-            <div class="user">
-                <img src="img/salesman2.jpeg" alt="">
-                <div class="user-info">
-                    <h3>Анелия Антонова</h3>
-                    <span>Щастлив продавач</span>
+                <!--3-->
+                <div class="box">
+                    <div class="stars" data-id="1">
+                        <span data-value="1">★</span>
+                        <span data-value="2">★</span>
+                        <span data-value="3">★</span>
+                        <span data-value="4">★</span>
+                        <span data-value="5">★</span>
+                        <span data-value="6">★</span>
+                        <span data-value="7">★</span>
+                        <span data-value="8">★</span>
+                        <span data-value="9">★</span>
+                        <span data-value="10">★</span>
+                    </div>
+                    <p>5.0 до 2.5 Повечето купувачи са доволни от този продавач</p>
+                    <div class="user">
+                        <img src="img/salesman2.jpeg" alt="">
+                        <div class="user-info">
+                            <h3>Анелия Антонова</h3>
+                            <span>Щастлив продавач</span>
+                        </div>
+                    </div>
                 </div>
+        
             </div>
-        </div>
-
-    </div>
-</section>
-
+        </section>
         
             <!--Контакт-->
             <section class="contact" id="contact">
@@ -479,7 +477,7 @@
 
 
             <!-- Footer section -->
-            <section class="footer">
+            <section class="footer" id="contact">
                 <div class="box-container">
                     <div class="box">
                         <h3>Бързи връзки</h3>

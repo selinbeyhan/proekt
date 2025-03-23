@@ -131,7 +131,7 @@ header .navbar {
     position: relative;
 }
 
-/* "Post Property" Butonu */
+/* Добави обява */
 .post-property-btn {
     background: var(--secondary-color);
     color: var(--white-color);
@@ -152,8 +152,6 @@ header .navbar {
 .post-property .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%; /* Post Property'nin hemen altına yerleşsin */
-    left: 0;
     background-color: rgba(0, 0, 0, 0.4); /* Şeffaf siyah arka plan */
     border-radius: var(--border-radius-m);
     padding: 5px 0; /* Daha küçük iç boşluk */
@@ -166,9 +164,9 @@ header .navbar {
 
 /* Alt Menüyü Görünür Yapma */
 .post-property:hover .dropdown-menu {
-    display: block;
+    display:block;
     opacity: 1; /* Görünür hale gelir */
-    height: auto; /* Yüksekliği otomatik olarak ayarlar */
+    height: max-content; /* Yüksekliği otomatik olarak ayarlar */
 }
 .dropdown-menu {
     display: none;
@@ -192,7 +190,7 @@ header .navbar {
 }
 .dropdown-menu a {
     display: block;
-    padding: 10px;
+    padding: 20px;
     color: var(--white-color);
     text-decoration: none;
     border-radius: var(--border-radius-m);
@@ -201,8 +199,11 @@ header .navbar {
 
 /* Üzerine Gelince Renk Değişsin */
 .dropdown-menu a:hover {
-    background-color: var(--secondary-color); /* Sekonder renk */
+    background-color: var(--secondary-color); 
     color: var(--white-color);
+}
+#filter::after{
+    margin-top: 200px;
 }
 
 /* "Saved" ve "Account" Butonlarını Aşağıya Yerleştirme */
@@ -214,7 +215,7 @@ header .navbar {
 /* "Saved" Butonu */
 .saved-link {
     color: var(--white-color);
-    font-size: var(--font-size-s); /* Daha küçük yazı tipi */
+    font-size: var(--font-size-s); 
     text-decoration: none;
     display: block;
     padding: 5px 10px; /* Daha küçük iç boşluk */
@@ -292,26 +293,16 @@ header .navbar {
 }
 /* Başlangıçta menüyü gizle */
 .property-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
     right: 0;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 8px;
-    padding: 10px;
     width: 200px;
-    z-index: 100;
     transition: opacity 0.3s ease, height 0.3s ease;
-    opacity: 0;
-    height: 0;
     overflow: hidden;
 }
 
 /* Açılınca görünür yap */
-.property-dropdown.active {
-    display: block;
-    opacity: 1;
-    height: auto;
+.property-dropdown .active {
 }
 
 /* Arka planı küçültme efekti */
@@ -319,37 +310,11 @@ header .navbar {
     background: rgba(0, 0, 0, 0.8);
     padding: 5px;
 }
-.post-property {
-    position: relative;
-}
-/* Dropdown Menüyü Gizli Başlat */
-.post-property .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    background-color: var(--dark-color);
-    border-radius: var(--border-radius-m);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
-    padding: 10px 0;
-    width: 150%;
-    height: 100%;
-    z-index: 10;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-}
-.post-property:hover .dropdown-menu {
-    display: block; /* Hover ile menü görünsün */
-    opacity: 1;
-    visibility: visible;
-}
+
+
 
 /* Açılınca Görünsün */
-.post-property.show .dropdown-menu {
-    display: block;
-    opacity: 1;
-}
+
 
 .navbar .nav-menu .dropdown-menu .dropdown-item:hover {
     background-color: var(--secondary-color);
@@ -372,7 +337,6 @@ header .navbar {
     gap: 5px;
     top: 100%;
     left: 0;
-    background-color: var(--dark-color); /* Tamamen şeffaf */
     border-radius: var(--border-radius-m);
     padding: 10px 0;
     width: 220px;
@@ -558,7 +522,7 @@ body {
 }
 
 .about-section .about-details .section-title {
-    padding: 0;
+    padding: 15px;
 }
 .section-section .about-details {
     max-width: 50%;
@@ -1081,7 +1045,7 @@ body {
     padding: 10px 0;
     font-weight: bold;
     text-transform: capitalize;
-    text-decoration: underline
+    text-decoration: none;
 }
 
 .footer .box a {
@@ -1095,7 +1059,8 @@ body {
 
 .footer .box a:hover {
     color: var(--secondary-color);
-    text-decoration: underline;
+    text-decoration: none;
+    
 }
 
 /* Align payment icons to the right */
