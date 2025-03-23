@@ -5,9 +5,7 @@
     margin: 0;
     padding: 0;
 }
-body{
-    background-color: #a5a5a5;
-}
+
 :root {
     /* Colors */
 --white-color: #fff;
@@ -62,7 +60,6 @@ img {
     width: 100%;
 }
 
-
 /* Ana container ve içeriklerin genişliği */
 .section-content {
     margin: 0 auto;
@@ -87,15 +84,14 @@ img {
 }
 
 /* Navbar styling */
-header{
+header {
     position: fixed;
     width: 100%;
-    top: 0px; 
-    right: 0px;
+    top: 0;
     z-index: 5;
-    background: #000000;
+    background: #000;
 }
- 
+
 header .navbar {
     display: flex;
     padding: 20px;
@@ -103,7 +99,7 @@ header .navbar {
     justify-content: space-between;
 }
 
-.navbar  .nav-logo .logo-text {
+.navbar .nav-logo .logo-text {
     color: var(--secondary-color);
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-semibold);
@@ -127,9 +123,6 @@ header .navbar {
     background: var(--secondary-color);
 }
 
-.navbar :where(#menu-close-button, #menu-open-button) {
-    display: none;
-}
 /* Sağ Üst Butonlar */
 .nav-actions {
     display: flex;
@@ -148,9 +141,6 @@ header .navbar {
     border-radius: var(--border-radius-m);
     cursor: pointer;
     transition: 0.3s ease;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 .post-property-btn:hover {
@@ -158,67 +148,117 @@ header .navbar {
     color: var(--primary-color);
 }
 
+/* Alt Menülerin Konumlandırılması ve Gizlenmesi */
+.post-property .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Post Property'nin hemen altına yerleşsin */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Şeffaf siyah arka plan */
+    border-radius: var(--border-radius-m);
+    padding: 5px 0; /* Daha küçük iç boşluk */
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(238, 232, 232, 0.1);
+    transition: height 0.3s ease, opacity 0.3s ease; /* Yükseklik ve opaklık geçişi */
+    opacity: 0; /* Başlangıçta şeffaf */
+    height: 0; /* Başlangıçta sıfır yükseklik */
+}
+
+/* Alt Menüyü Görünür Yapma */
+.post-property:hover .dropdown-menu {
+    display: block;
+    opacity: 1; /* Görünür hale gelir */
+    height: auto; /* Yüksekliği otomatik olarak ayarlar */
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Post Property butonunun hemen altında */
+    left: 0;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-m);
+    box-shadow: 0 4px 6px rgba(238, 232, 232, 0.1);
+    padding: 5px 0;
+    z-index: 10;
+    transition: height 0.3s ease, opacity 0.3s ease;
+    opacity: 0; /* Başlangıçta görünmez */
+    height: 0; /* Başlangıçta sıfır yükseklik */
+}
+
+.dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    height: auto;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius-m);
+    transition: background 0.3s ease, color 0.3s ease;
+} 
+
+/* Üzerine Gelince Renk Değişsin */
+.dropdown-menu a:hover {
+    background-color: var(--secondary-color); /* Sekonder renk */
+    color: var(--white-color);
+}
+
+/* "Saved" ve "Account" Butonlarını Aşağıya Yerleştirme */
+.saved-link,
+.account-dropdown {
+    margin-top: 5px; /* Aralarına daha az mesafe bırak */
+}
+
 /* "Saved" Butonu */
 .saved-link {
     color: var(--white-color);
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-s); /* Daha küçük yazı tipi */
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 8px 15px;
-    border-radius: 20px;
+    display: block;
+    padding: 5px 10px; /* Daha küçük iç boşluk */
+    border-radius: var(--border-radius-m);
     transition: background 0.3s ease, color 0.3s ease;
-
 }
 
-.saved-link i {
-    font-size: 18px;
-    color:white;
+.saved-link:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
 }
 
-/* "Account" Dropdown */
-.account-dropdown {
-    position: relative;
-}
-/* "Saved" ve "Account" Butonlarını Aşağı Çekme */
-.saved-link,
-.account-dropdown {
-    margin-top: 45px; /* Biraz aşağı al */
-}
-
+/* "Account" Butonu */
 .account-link {
     color: var(--white-color);
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-s); /* Daha küçük yazı tipi */
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 5px;
-    padding: 8px 15px;
-    border-radius: 20px;
+    padding: 5px 10px; /* Daha küçük iç boşluk */
+    border-radius: var(--border-radius-m);
     transition: background 0.3s ease, color 0.3s ease;
 }
 
 .account-link i {
     font-size: 14px;
-    color:white;
-}
-
-.nav-actions a {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 8px 15px;
-    border-radius: 20px; /* Yuvarlak köşeler */
     color: white;
-    transition:  0.3s ease, color 0.3s ease;
-    text-decoration: none; /* Altı çizili olmasın */
 }
 
-.nav-actions a:hover {
-    background: orange; /* Üzerine gelince turuncu olacak */
-    color: black; /* Yazı rengi değişsin */
+.account-link:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
 }
+
+/* Hover Etkileşimi */
+.nav-actions a:hover,
+.saved-link:hover,
+.account-dropdown:hover {
+    background: orange;
+    color: black;
+    opacity: 1; /* Üzerine gelindiğinde görünür hale gelir */
+}
+
 /* Dropdown Menüsünün Genel Stilini Ayarlama */
 .navbar .nav-menu .dropdown {
     position: relative;
@@ -227,31 +267,93 @@ header .navbar {
 .navbar .nav-menu .dropdown-menu {
     display: none; /* Başlangıçta gizli */
     position: absolute;
-    top: 100%; 
+    top: 100%; /* Menü öğesini altına yerleştir */
     left: 0;
-    background-color: var(0,0,0,0.2);
+    background-color: transparent; /* Şeffaf siyah arka plan */
     border-radius: var(--border-radius-m);
     padding: 10px 0;
     width: 200px;
     z-index: 10;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Başlangıçta görünmez */
+    transition: opacity 0.3s ease; /* Opaklık geçişi */
 }
 
-/* Dropdown Menü Öğeleri */
-.navbar .nav-menu .dropdown-menu .dropdown-item {
-    padding: 10px 20px;
-    margin-top: 10px;
-    color: var(--white-color);
-    text-decoration: none;
+/* Dropdown Menü Üzerine Gelince Görünür Olur */
+.navbar .nav-menu .dropdown:hover .dropdown-menu {
     display: block;
-    transition: background 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.2); /* Arka planı şeffaf yapıyoruz */
+    opacity: 1; /* Üzerine gelindiğinde görünür hale gelir */
+}
+
+/* "Saved" ve "Account" Butonlarını Aşağı Çekme */
+.saved-link,
+.account-dropdown {
+    margin-top: 45px; /* Biraz aşağı al */
+}
+/* Başlangıçta menüyü gizle */
+.property-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+    z-index: 100;
+    transition: opacity 0.3s ease, height 0.3s ease;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Açılınca görünür yap */
+.property-dropdown.active {
+    display: block;
+    opacity: 1;
+    height: auto;
+}
+
+/* Arka planı küçültme efekti */
+.shrink-background {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+}
+.post-property {
+    position: relative;
+}
+/* Dropdown Menüyü Gizli Başlat */
+.post-property .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: var(--dark-color);
     border-radius: var(--border-radius-m);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    padding: 10px 0;
+    width: 150%;
+    height: 100%;
+    z-index: 10;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+.post-property:hover .dropdown-menu {
+    display: block; /* Hover ile menü görünsün */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Açılınca Görünsün */
+.post-property.show .dropdown-menu {
+    display: block;
+    opacity: 1;
 }
 
 .navbar .nav-menu .dropdown-menu .dropdown-item:hover {
     background-color: var(--secondary-color);
-    color: var(--primary-color);
+    color: var(--white-color);
 }
 
 /* Hover ile Açılan Menü */
@@ -264,16 +366,17 @@ header .navbar {
 }
 
 .navbar .nav-menu .dropdown-menu {
-    display: none;
+    display: flex;
     position: absolute;
+    flex-direction: column;
+    gap: 5px;
     top: 100%;
     left: 0;
-    background-color: rgba(0, 0, 0, 0); /* Tamamen şeffaf */
+    background-color: var(--dark-color); /* Tamamen şeffaf */
     border-radius: var(--border-radius-m);
     padding: 10px 0;
     width: 220px;
-    z-index: 10;
-    box-shadow: none; /* Gölgeyi kaldırdık */
+   
 }
 
 .navbar .nav-menu .dropdown-menu .dropdown-item {
@@ -282,8 +385,9 @@ header .navbar {
     text-decoration: none;
     display: block;
     transition: background 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: black;
     border-radius: var(--border-radius-m);
+    margin-bottom: 5px; /* Öğeler arasında 5px boşluk */
 }
 
 .navbar .nav-menu .dropdown-menu .dropdown-item:hover {
@@ -300,6 +404,7 @@ header .navbar {
 .navbar .nav-menu .nav-items:hover .dropdown-menu .dropdown-item {
     opacity: 1; /* Menü öğelerinin üzerine gelindiğinde yazı görünür hale gelir */
 }
+
 /*  register.css */
 body {
     font-family: Arial, sans-serif;
@@ -364,15 +469,14 @@ body {
     margin-bottom: 40px; /* Aşağı boşluk bırakır */
 }
 .hero-section {
-    min-height: 20vh;
-    max-height: 70vh;
+    min-height: 100vh;
     background: var(--primary-color);
 }
 
 .hero-section .section-content {
     display: flex;
     align-items: center;
-    min-height: 70vh;
+    min-height: 100vh;
     color: var(--white-color);
     justify-content: space-between;
 }
@@ -506,7 +610,6 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    
     overflow: hidden;
     background: #fff;
     flex: 1 1 300px;
@@ -664,6 +767,109 @@ body {
 .featured .box-container .box .content .buttons .btn:hover {
     background: var(--secondary-color);
 }
+/*ценови диапазон*/
+.price-filter {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.price-filter label {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.price-filter input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.price-filter button {
+    padding: 10px 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.price-filter button:hover {
+    background: var(--secondary-color);
+}
+
+/*Рейтинг*/
+.review {
+    text-align: center;
+    padding: 50px 10px;
+    background: #f8f8f8;
+}
+
+.review .heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.review .box-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.review .box {
+    flex: 1 1 30%;
+    min-width: 300px; 
+    max-width: 350px; 
+    background: white;
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+.review .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Yıldız Puanlama */
+.stars {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.stars span {
+    transition: color 0.3s;
+    padding: 0 3px;
+}
+
+.stars span:hover,
+.stars span.active {
+    color: gold;
+}
+
+/* Styling for images: smaller and round */
+.review .box img {
+    width: 300px;
+    height: 400px;
+    border-radius: 100%;
+    object-fit: cover; 
+    margin-bottom: 1rem;
+}
+
 
 /* Контакт */
 .contact {
@@ -875,7 +1081,7 @@ body {
     padding: 10px 0;
     font-weight: bold;
     text-transform: capitalize;
-    text-decoration: none
+    text-decoration: underline
 }
 
 .footer .box a {
@@ -889,7 +1095,7 @@ body {
 
 .footer .box a:hover {
     color: var(--secondary-color);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 /* Align payment icons to the right */

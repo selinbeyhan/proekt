@@ -7,6 +7,7 @@
     <!-- Linking Font Awesome for icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="import" href="about.html">
     </head>
     <body> 
         <!-- Header / Navbar -->
@@ -34,12 +35,11 @@
                         <a href="#" class="nav-link">ПОЛЕЗНО</a>
                         <ul class="dropdown-menu">
                             <li><a href="#" class="dropdown-item">Съвети за купувачи</a></li>
-                            <li><a href="#" class="dropdown-item">Съвети за продавачи</a></li>
-                            <li><a href="#" class="dropdown-item">Финансови консултации</a></li>
+                            <li><a href="#" class="dropdown-item">Ценови диапазон</a></li>
                         </ul>
                     </li>
                     <li class="nav-items">
-                        <a href="#" class="nav-link">ГАЛЕРИЯ</a>
+                        <a href="#" class="nav-link">РЕЙТИНГ</a>
                     </li>
                     <li class="nav-items">
                         <a href="#" class="nav-link">КОНТАКТ</a>
@@ -47,14 +47,21 @@
                 </ul>
                 
                 <div class="nav-actions">
-                    <button class="post-property-btn">Свойства на публикацията<i class="fas fa-paper-plane"></i></button>
-                    <a href="#" class="saved-link"><i class="fas fa-heart"></i> Запазено</a>
-                    <div class="account-dropdown">
-                        <a href="#" class="account-link">Акаунт <i class="fas fa-chevron-down"></i></a>
+                    <!-- Post Property Button -->
+                    <div class="post-property">
+                        <button class="post-property-btn">Добави обява <i class="fas fa-paper-plane"></i></button>
+                        <!-- Alt Menüler -->
+                        <div class="dropdown-menu property-dropdown">
+                            <a href="#" class="saved-link"><i class="fas fa-heart"></i> Вход </a>
+                            <div class="account-dropdown">
+                                <a href="#" class="account-link">Регистрация <i class="fas fa-chevron-down"></i></a>
+                            </div>
+                        </div>
                     </div>
+                
+                    <button id="menu-open-button" class="fas fa-bars"></button>
                 </div>
-        
-                <button id="menu-open-button" class="fas fa-bars"></button>
+                
             </nav>
         </header>
 
@@ -92,7 +99,18 @@
                            </div>
                     </div>
              </section>
+
+            <!--ценови диапазон-->
+            <div class="price-filter">
+                <label for="min-price">Минимална цена:</label>
+                <input type="number" id="min-price" name="min-price" placeholder="от">
             
+                <label for="max-price">Максимална цена:</label>
+                <input type="number" id="max-price" name="max-price" placeholder="до">
+            
+                <button id="filter-btn">Филтрирай</button>
+            </div>
+
              <!-- Houses section-->
              <section class="featured" id="featured">
                 <h1 class="heading"> <span>Нашите къщи</span> Имоти</h1>
@@ -102,19 +120,18 @@
             <div class="image-container">
                 <img src="img/house1.jpg" alt="House Image">
                 <div class="info">
-                    <h3>Преди 1 дни</h3>
                     <h3>Продавам</h3>
+                    <h3>Преди 1 ден</h3>
                 </div>   
             </div>
             <div class="content">
                 <div class="price">
-                    <h3>69,500лв.</h3>
-                    <a href="#" class="fas fa-heart"></a>
+                    <h3>65,500EUR</h3>
                     <a href="#" class="fas fa-envelope"></a>
                     <a href="#" class="fas fa-phone"></a>
                 </div>
                 <div class="locations">
-                    <h3>Къща  П58</h3>
+                    <h3>Къща  К58</h3>
                     <p>Плевен</p>
                 </div>
                 <div class="details">
@@ -131,19 +148,18 @@
             <div class="image-container">
                 <img src="img/house2.jpg" alt="House Image">
                 <div class="info">
-                    <h3>Преди 1 дни</h3>
                     <h3>Продавам</h3>
+                    <h3>Преди 1 ден</h3>
                 </div>   
             </div>
             <div class="content">
                 <div class="price">
-                    <h3>65,500лв.</h3>
-                    <a href="#" class="fas fa-heart"></a>
+                    <h3>62,500EUR</h3>
                     <a href="#" class="fas fa-envelope"></a>
                     <a href="#" class="fas fa-phone"></a>
                 </div>
                 <div class="locations">
-                    <h3>Къща Бургас K36</h3>
+                    <h3>Къща Бургас K56</h3>
                     <p>Бургас</p>
                 </div>
                 <div class="details">
@@ -160,14 +176,13 @@
             <div class="image-container">
                 <img src="img/house3.png" alt="House Image">
                 <div class="info">
-                    <h3>Преди 2 дни</h3>
                     <h3>Продавам</h3>
+                    <h3>Преди 2 дни</h3>
                 </div>
             </div>
             <div class="content">
                 <div class="price">
-                    <h3>70,200лв.</h3>
-                    <a href="#" class="fas fa-heart"></a>
+                    <h3>80,000EUR</h3>
                     <a href="#" class="fas fa-envelope"></a>
                     <a href="#" class="fas fa-phone"></a>
                 </div>
@@ -189,19 +204,18 @@
             <div class="image-container">
                 <img src="img/house4.jpg" alt="House Image">
                 <div class="info">
-                    <h3>Преди 4 дни</h3>
                     <h3>Продавам</h3>
+                    <h3>Преди 4 дни</h3>
                 </div>   
             </div>
             <div class="content">
                 <div class="price">
-                    <h3>120,500лв.</h3>
-                    <a href="#" class="fas fa-heart"></a>
+                    <h3>99,900EUR</h3>
                     <a href="#" class="fas fa-envelope"></a>
                     <a href="#" class="fas fa-phone"></a>
                 </div>
                 <div class="locations">
-                    <h3>Къща Д92</h3>
+                    <h3>Къща К118</h3>
                     <p>Добрич</p>
                 </div>
                 <div class="details">
@@ -218,14 +232,13 @@
             <div class="image-container">
                 <img src="img/house5.jpg" alt="House Image">
                 <div class="info">
-                    <h3>Преди 3 дни</h3>
                     <h3>Продавам</h3>
+                    <h3>Прeди 3 дни</h3>
                 </div>   
             </div>
             <div class="content">
                 <div class="price">
-                    <h3>72,900</h3>
-                    <a href="#" class="fas fa-heart"></a>
+                    <h3>74,900EUR</h3>
                     <a href="#" class="fas fa-envelope"></a>
                     <a href="#" class="fas fa-phone"></a>
                 </div>
@@ -247,14 +260,13 @@
             <div class="image-container">
                 <img src="img/house6.jpg" alt="House Image">
                 <div class="info">
-                    <h3>Преди 5 дни</h3>
                     <h3>Продавам</h3>
+                    <h3>Преди 4 дни</h3>
                 </div>   
             </div>
             <div class="content">
                 <div class="price">
-                    <h3>60,000</h3>
-                    <a href="#" class="fas fa-heart"></a>
+                    <h3>55,000EUR</h3>
                     <a href="#" class="fas fa-envelope"></a>
                     <a href="#" class="fas fa-phone"></a>
                 </div>
@@ -276,19 +288,18 @@
             <div class="image-container">
                 <img src="img/house7.jpg" alt="House Image">
                 <div class="info">
-                    <h3>Преди 3 дни</h3>
                     <h3>Продавам</h3>
+                    <h3>Преди 3 дни</h3>
                 </div>   
             </div>
             <div class="content">
                 <div class="price">
-                    <h3>60,700лв.</h3>
-                    <a href="#" class="fas fa-heart"></a>
+                    <h3>60,000EUR</h3>
                     <a href="#" class="fas fa-envelope"></a>
                     <a href="#" class="fas fa-phone"></a>
                 </div>
                 <div class="locations">
-                    <h3>Къща Варна B32</h3>
+                    <h3>Къща Варна К50</h3>
                     <p>Варна</p>
                 </div>
                 <div class="details">
@@ -305,19 +316,18 @@
             <div class="image-container">
                 <img src="img/house8.jpg" alt="House Image">
                 <div class="info">
-                    <h3>Преди 2 дни</h3>
                     <h3>Продавам</h3>
+                    <h3>Преди 2 дни</h3>
                 </div>   
             </div>
             <div class="content">
                 <div class="price">
-                    <h3>70,000лв.</h3>
-                    <a href="#" class="fas fa-heart"></a>
+                    <h3>79,000лвEUR</h3>
                     <a href="#" class="fas fa-envelope"></a>
                     <a href="#" class="fas fa-phone"></a>
                 </div>
                 <div class="locations">
-                    <h3>Къща Разград K8А2</h3>
+                    <h3>Къща Разград K60</h3>
                     <p>Разград</p>
                 </div>
                 <div class="details">
@@ -331,8 +341,87 @@
         </div> 
     </div>
 </section>
-                
-                  
+
+          <!-- Рейтинг -->
+<section class="review" id="review">
+    <h1 class="heading">Рейтинг<span> на продавача</span></h1>
+    <div class="box-container">
+
+        <!--1-->
+        <div class="box">
+            <div class="stars" data-id="1">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+                <span data-value="6">★</span>
+                <span data-value="7">★</span>
+                <span data-value="8">★</span>
+                <span data-value="9">★</span>
+                <span data-value="10">★</span>
+            </div>
+            <p>от 10 до 7.5 Повечето купувачи са много доволни от този продавач</p>
+            <div class="user">
+                <img src="img/salesman.jpg" alt="">
+                <div class="user-info">
+                    <h3>Алена Шарапова</h3>
+                    <span>Щастлив продавач</span>
+                </div>
+            </div>
+        </div>
+
+        <!--2-->
+        <div class="box">
+            <div class="stars" data-id="2">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+                <span data-value="6">★</span>
+                <span data-value="7">★</span>
+                <span data-value="8">★</span>
+                <span data-value="9">★</span>
+                <span data-value="10">★</span>
+            </div>
+            <p>7.5 до 5.0 Повечето купувачи са доволни от този продавач</p>
+            <div class="user">
+                <img src="img/salesman1.jpg" alt="">
+                <div class="user-info">
+                    <h3>Красимир Лазаров</h3>
+                    <span>Щастлив продавач</span>
+                </div>
+            </div>
+        </div>
+        <!--3-->
+        <div class="box">
+            <div class="stars" data-id="1">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+                <span data-value="6">★</span>
+                <span data-value="7">★</span>
+                <span data-value="8">★</span>
+                <span data-value="9">★</span>
+                <span data-value="10">★</span>
+            </div>
+            <p>5.0 до 2.5 Повечето купувачи са доволни от този продавач</p>
+            <div class="user">
+                <img src="img/salesman2.jpeg" alt="">
+                <div class="user-info">
+                    <h3>Анелия Антонова</h3>
+                    <span>Щастлив продавач</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+        
             <!--Контакт-->
             <section class="contact" id="contact">
                 <h1 class="heading"> <span>Свържете</span> се с нас</h1>
